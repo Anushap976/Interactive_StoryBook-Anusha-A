@@ -10,7 +10,7 @@ import Feedback from './pages/Feedback/Feedback';
 function App() {
 
   return (
-       <Router>
+    <HashRouter>
       <div className="app-container">
         <Header />
         <main className="main-content">
@@ -23,7 +23,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   )
 }
 

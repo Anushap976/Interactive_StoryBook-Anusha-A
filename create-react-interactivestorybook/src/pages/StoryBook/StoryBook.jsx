@@ -44,7 +44,7 @@ const StoryBook = () => {
 
           <div className="nav-buttons">
             <Button text="← Previous" onClick={prevStory} />
-            <Button text="🔄 Reset" onClick={resetStory} />
+            <Button text="🔄 Back to Library" onClick={resetStory} />
             <Button text="Next →" onClick={nextStory} />
           </div>
         </div>
