@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+.storybook-header {
+  background: linear-gradient(to right, #f3e8ff, #fff4ec);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid #c3f3d6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-title h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2.5rem;
+  color: #6a0dad;
+  text-shadow: 1px 1px #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+.header-divider {
+  width: 80px;
+  height: 3px;
+  background: #6a0dad;
+  border: none;
+  margin: 0.5rem auto;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #6a0dad;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #6a0dad;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Highlight current page */
+.active-link {
+  color: #6a0dad;
+  border-bottom: 2px solid #6a0dad;
+}

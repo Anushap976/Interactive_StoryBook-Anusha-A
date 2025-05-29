@@ -1,11 +1,29 @@
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import About from './pages/About/About';
+import Home from './pages/Home/Home';
+import StoryBook from './pages/StoryBook/StoryBook';
+import Feedback from './pages/Feedback/Feedback';
 
 function App() {
 
   return (
-    <>
-
-    </>
+       <Router>
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/storybook" element={<StoryBook />} />
+            <Route path="/feedback" element={<Feedback />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
