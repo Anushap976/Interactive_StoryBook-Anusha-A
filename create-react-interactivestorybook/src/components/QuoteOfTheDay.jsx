@@ -18,8 +18,7 @@ const QuoteOfTheDay = () => {
                 setAuthor(data.author);
             })
             .catch((error) => {
-                setQuote('Failed to load quote.');
-                setAuthor('');
+
             });
     }, []);
 
