@@ -41,6 +41,7 @@ const Feedback = () => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
+                                placeholder="Enter your name"
                                 required
                             />
                         </label>
@@ -53,6 +54,7 @@ const Feedback = () => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
+                                placeholder="Enter your email"
                                 required
                             />
                         </label>
@@ -65,6 +67,7 @@ const Feedback = () => {
                                 value={formData.message}
                                 rows="8"
                                 onChange={handleChange}
+                                placeholder="Share your thoughts with us..."
                                 required
                             />
                         </label>

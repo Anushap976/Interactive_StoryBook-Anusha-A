@@ -1,6 +1,6 @@
 .feedback-container {
     max-width: 600px;
-    width: 100%;
+    width: 95%;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white so form text stands out */
     border-radius: 8px;
