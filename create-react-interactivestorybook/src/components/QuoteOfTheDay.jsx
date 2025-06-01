@@ -64,10 +64,6 @@ const QuoteOfTheDay = () => {
                         ✨ "{quote}" {author && <cite>— {author}</cite>}
                     </blockquote>
 
-                    {/* Button to fetch a new quote on demand */}
-                    <button onClick={fetchQuote} className="refresh-button">
-                        New Quote
-                    </button>
                 </>
             )}
         </section>
