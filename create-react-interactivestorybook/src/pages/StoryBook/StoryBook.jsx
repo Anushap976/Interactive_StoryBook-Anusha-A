@@ -1,53 +1,31 @@
-import { useState } from 'react';
-import './StoryBook.css';
+import { useState, useEffect } from 'react';
 import stories from '../../assets/stories.json';
-import Button from '../../components/Button';
-import StoryPreview from './StoryPreview';
+import StoryList from './StoryList';
+import StoryDetail from './StoryDetail';
 
 const StoryBook = () => {
+  // Tracks the currently selected story index
   const [currentIndex, setCurrentIndex] = useState(null);
 
-  const currentStory = currentIndex !== null ? stories[currentIndex] : null;
+  // Automatically scroll to top when switching to detail view
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentIndex]);
 
-  const nextStory = () => {
-    setCurrentIndex((prev) => (prev < stories.length - 1 ? prev + 1 : 0));
-  };
-
-  const prevStory = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : stories.length - 1));
-  };
-
-  const resetStory = () => {
-    setCurrentIndex(null);
-  };
-
- return (
+  return (
     <div className="storybook-container">
-      <h2>📖 Interactive Story Explorer</h2>
-
-      {currentStory === null ? (
-        <div className="story-list fade-in">
-          {stories.map((story, index) => (
-            <StoryPreview
-              key={story.id}
-              story={story}
-              onClick={() => setCurrentIndex(index)}
-            />
-          ))}
-        </div>
+       {/* Conditional rendering: show list or detail based on currentIndex */}
+      {currentIndex === null ? (
+        // List view: show all stories
+        <StoryList stories={stories} onSelect={setCurrentIndex} />
       ) : (
-        <div className="story-detail fade-in">
-          <h2>{currentStory.title}</h2>
-          <p className="author">by {currentStory.author}</p>
-          <img src={currentStory.image} alt={currentStory.title} />
-          <p className="story-content">{currentStory.content}</p>
-
-          <div className="nav-buttons">
-            <Button text="← Previous" onClick={prevStory} />
-            <Button text="🔄 Back to Library" onClick={resetStory} />
-            <Button text="Next →" onClick={nextStory} />
-          </div>
-        </div>
+         // Detail view: show selected story and navigation controls
+        <StoryDetail
+          story={stories[currentIndex]}
+          onBack={() => setCurrentIndex(null)}    // Return to list view
+          onNext={() => setCurrentIndex(i => (i < stories.length - 1 ? i + 1 : 0))}  //next story
+          onPrev={() => setCurrentIndex(i => (i > 0 ? i - 1 : stories.length - 1))}  // previous story]
+        />
       )}
     </div>
   );

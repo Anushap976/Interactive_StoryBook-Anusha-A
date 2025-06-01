@@ -15,12 +15,14 @@ const Home = () => {
                         No need to wait or search the shelves in line —
                         The magic lives right here, and it's yours to define.
                     </p>
+                    {/* Link to the storybook page */}
                     <a href="/storybook" className="explore-btn">✨ Start Exploring</a>
                 </div>
                 <div className="home-image">
                     <img src={storyImage} alt="A magical open book with stars and characters flying out" />
                 </div>
             </div>
+            {/* Section: Daily inspirational quote component */}
             <div className="quote-of-the-day"><QuoteOfTheDay /></div>
         </section>
     )

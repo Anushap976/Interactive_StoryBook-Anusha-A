@@ -15,6 +15,7 @@ function App() {
         <Header />
         <main className="main-content">
           <Routes>
+            {/* Define routes for Home, About, StoryBook, and Feedback pages */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/storybook" element={<StoryBook />} />

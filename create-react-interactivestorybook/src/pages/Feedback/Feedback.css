@@ -1,11 +1,12 @@
 .feedback-container {
     max-width: 600px;
-    margin: 2rem auto;
+    width: 100%;
     padding: 2rem;
-    background-color: #f4f4f9;
+    background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white so form text stands out */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    height: 50vh
+    color: #333;
+    box-sizing: border-box;
 }
 
 .feedback-form label {
@@ -42,3 +43,20 @@
     color: green;
     text-align: center;
 }
+
+.feedback-page-background {
+    min-height: 100vh;  /* full viewport height */
+    width: 100%;
+    background-image: url('/assets/feedback.png');  /* your local image path */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;  /* center the container */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+
+
