@@ -1,9 +1,16 @@
-
 import storyImage from '../../assets/storyImage.png';
 import './Home.css';
 import QuoteOfTheDay from '../../components/QuoteOfTheDay';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button';
+
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    const handleExploreClick = () => {
+        navigate('/storybook');
+    };
     return (
         <section className="home-container">
             <div className="home-content">
@@ -16,7 +23,11 @@ const Home = () => {
                         The magic lives right here, and it's yours to define.
                     </p>
                     {/* Link to the storybook page */}
-                    <a href="/storybook" className="explore-btn">✨ Start Exploring</a>
+                    <Button
+                        text="✨ Start Exploring"
+                        onClick={handleExploreClick}
+                        className="explore-btn"
+                    />
                 </div>
                 <div className="home-image">
                     <img src={storyImage} alt="A magical open book with stars and characters flying out" />

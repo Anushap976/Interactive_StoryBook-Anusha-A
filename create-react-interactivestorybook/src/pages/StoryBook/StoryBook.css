@@ -176,30 +176,28 @@
 }
 
 .narration-buttons button {
-  background: #6a0dad; /* purple */
+  background: #b47cd0;
   border: none;
   color: white;
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(106, 13, 173, 0.4);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 4px 6px rgba(106, 13, 173, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
 }
 
 .narration-buttons button:hover:not(:disabled) {
-  background: #4b058e;
+  background: #9c5bb7;
   transform: scale(1.1);
 }
 
 .narration-buttons button:disabled {
-  background: #bba6d6;
+  background: #e3d4ec;
   cursor: not-allowed;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;

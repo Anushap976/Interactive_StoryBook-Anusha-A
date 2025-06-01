@@ -9,7 +9,7 @@ const StoryList = ({ stories, onSelect }) => (
             <StoryPreview
                 key={story.id}
                 story={story}
-                onClick={() => onSelect(index)}
+                onClick={() => onSelect(story.id)}
             />
         ))}
     </section>

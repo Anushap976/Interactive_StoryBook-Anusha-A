@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Button from '../../components/Button';
 
 const StoryNarration = ({ text }) => {
@@ -44,13 +44,20 @@ const StoryNarration = ({ text }) => {
         setIsPaused(false);
     };
 
+    useEffect(() => {
+        return () => {
+            // This will run when the component unmounts
+            window.speechSynthesis.cancel();
+        };
+    }, []);
+
     return (
         <div className="narration-buttons">
             {/* Narration control buttons with enabled/disabled states */}
-            <Button text="🔊" onClick={start} disabled={isNarrating && !isPaused} />
-            <Button text="⏸" onClick={pause} disabled={!isNarrating || isPaused} />
-            <Button text="▶️" onClick={resume} disabled={!isPaused} />
-            <Button text="⏹" onClick={stop} disabled={!isNarrating} />
+            <Button text="▶ Play" onClick={start} disabled={isNarrating && !isPaused} />
+            <Button text="⏸ Pause" onClick={pause} disabled={!isNarrating || isPaused} />
+            <Button text="⏯ Resume" onClick={resume} disabled={!isPaused} />
+            <Button text="⏹ Stop" onClick={stop} disabled={!isNarrating} />
         </div>
     );
 };
